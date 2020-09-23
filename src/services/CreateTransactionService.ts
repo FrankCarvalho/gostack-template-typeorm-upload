@@ -21,7 +21,7 @@ class CreateTransactionService {
     category,
   }: Request): Promise<Transaction> {
     const transactionsRepository = getCustomRepository(TransactionsRepository);
-    const categoryRepository = await getRepository(Category);
+    const categoryRepository = getRepository(Category);
 
     const { total } = await transactionsRepository.getBalance();
 
